@@ -37,6 +37,20 @@ CRITICAL ORACLE RULES:
 MAX_HISTORY_MESSAGES = 6
 
 
+
+def strip_think_tags(text):
+    """Remove <think>...</think> blocks some models add. While a think
+    block is still open (no closing tag yet), show nothing instead of
+    the raw tag text."""
+    if "<think>" in text:
+        if "</think>" in text:
+            return re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
+        return ""  # still thinking, nothing to show yet
+    return text
+
+
+
+
 def chat_with_assistant_stream(user_message, history):
     context = find_matching_resume_sections(user_message, top_n=3)
 
@@ -72,12 +86,3 @@ def chat_with_assistant_stream(user_message, history):
         yield "I had a connection issue with the assistant. Please try again."
 
 
-def strip_think_tags(text):
-    """Remove <think>...</think> blocks some models add. While a think
-    block is still open (no closing tag yet), show nothing instead of
-    the raw tag text."""
-    if "<think>" in text:
-        if "</think>" in text:
-            return re.sub(r"<think>.*?</think>", "", text, flags=re.DOTALL).strip()
-        return ""  # still thinking, nothing to show yet
-    return text
