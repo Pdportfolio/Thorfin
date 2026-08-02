@@ -2,7 +2,7 @@
 import streamlit as st
 from chat_flow import chat_with_assistant_stream
 
-st.set_page_config(page_title="Prakhar Dwivedi | AI Agent", page_icon="🤖", layout="wide")
+st.set_page_config(page_title="Prakhar Dwivedi | Portfolio Assistant", page_icon="🤖", layout="wide")
 
 # ---------------- Sidebar ----------------
 with st.sidebar:
