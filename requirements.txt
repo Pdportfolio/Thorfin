@@ -1,0 +1,6 @@
+python-dotenv
+numpy
+sentence-transformers
+requests
+groq
+gradio
