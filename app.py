@@ -11,12 +11,6 @@ with st.sidebar:
     st.caption("Data Scientist & AI/ML Engineer")
 
     st.markdown("---")
-    st.markdown(
-        "[💻 GitHub](https://github.com/prakharpd)  \n"
-        "[👔 LinkedIn](https://www.linkedin.com/in/prakhardwivedi-pd/)  \n"
-        "[🌐 Portfolio](https://pd-portfolio18.netlify.app/)"
-    )
-    st.markdown("---")
     st.markdown("**Try asking:**")
 
     example_questions = [
@@ -29,6 +23,13 @@ with st.sidebar:
     for question in example_questions:
         if st.button(question, use_container_width=True):
             clicked_question = question
+
+    st.markdown("---")
+    st.markdown(
+        "[💻 GitHub](https://github.com/prakharpd)  \n"
+        "[👔 LinkedIn](https://www.linkedin.com/in/prakhardwivedi-pd/)  \n"
+        "[🌐 Portfolio](https://pd-portfolio18.netlify.app/)"
+    )
 
 # ---------------- Main chat area ----------------
 st.title("Prakhar Dwivedi")
