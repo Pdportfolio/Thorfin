@@ -3,4 +3,4 @@ numpy
 sentence-transformers
 requests
 groq
-gradio
+streamlit
